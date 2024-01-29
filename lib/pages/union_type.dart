@@ -1,3 +1,4 @@
+import 'package:dydx_flutter_study_01/components/scaffold.dart';
 import 'package:flutter/material.dart';
 
 /// Union type
@@ -33,8 +34,67 @@ class TypeProcessingView extends StatefulWidget {
 }
 
 class _TypeProcessingViewState extends State<TypeProcessingView> {
+  SampleUnionType? sampleType;
+
+  /// 型を返す
+  String getType(SampleUnionType? type) {
+    if (type is TypeA) {
+      // ここでTypeAとして認識される
+      final typeA = type;
+      return typeA.runtimeType.toString();
+    }
+    if (type is TypeB) {
+      // ここでTypeBとして認識される
+      final typeB = type;
+      return typeB.runtimeType.toString();
+    }
+    return 'unknown';
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MyScaffold(
+      title: 'Union Type',
+      persistentFooterButtons: [
+        /// TypeA型をセットする
+        IconButton.filled(
+          color: Colors.white,
+          onPressed: () {
+            setState(() {
+              sampleType = const TypeA('value');
+            });
+          },
+          icon: const Icon(Icons.abc),
+        ),
+
+        /// TypeB型をセットする
+        IconButton.filled(
+          color: Colors.white,
+          onPressed: () {
+            setState(() {
+              sampleType = const TypeB(0);
+            });
+          },
+          icon: const Icon(Icons.numbers),
+        ),
+
+        /// nullをセットする
+        IconButton.filled(
+          color: Colors.white,
+          onPressed: () {
+            setState(() {
+              sampleType = null;
+            });
+          },
+          icon: const Icon(Icons.clear),
+        ),
+      ],
+      child: Center(
+        child: Text(
+          getType(sampleType),
+          style: const TextStyle(fontSize: 24.0),
+        ),
+      ),
+    );
   }
 }
