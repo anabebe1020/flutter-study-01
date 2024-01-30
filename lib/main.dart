@@ -1,4 +1,5 @@
 import 'package:dydx_flutter_study_01/components/scaffold.dart';
+import 'package:dydx_flutter_study_01/pages/orientation_change.dart';
 import 'package:dydx_flutter_study_01/pages/orientation_control/page.dart';
 import 'package:dydx_flutter_study_01/pages/union_type.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -42,6 +42,11 @@ class MyHomePage extends StatelessWidget {
           NavigationLink(
             label: 'Orientation Control',
             to: OrientationControlPage(),
+          ),
+          //
+          NavigationLink(
+            label: 'Orientation Change',
+            to: OrientationChangePage(),
           ),
         ],
       ),
