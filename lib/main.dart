@@ -1,7 +1,9 @@
 import 'package:dydx_flutter_study_01/components/scaffold.dart';
+import 'package:dydx_flutter_study_01/pages/orientation_control/page.dart';
 import 'package:dydx_flutter_study_01/pages/union_type.dart';
-import 'package:dydx_flutter_study_01/utils/transition.dart';
 import 'package:flutter/material.dart';
+
+import 'components/nav_link.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,15 +34,14 @@ class MyHomePage extends StatelessWidget {
     return MyScaffold(
       title: 'トップ',
       child: ListView(
-        children: [
-          TextButton(
-            onPressed: () {
-              push(context, const TypeProcessingView(), TypeProcessingView);
-            },
-            child: const Text(
-              'Union Type',
-              style: TextStyle(fontSize: 24.0),
-            ),
+        children: const [
+          NavigationLink(
+            label: 'Union Type',
+            to: TypeProcessingView(),
+          ),
+          NavigationLink(
+            label: 'Orientation Control',
+            to: OrientationControlPage(),
           ),
         ],
       ),
