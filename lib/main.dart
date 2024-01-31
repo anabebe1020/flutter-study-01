@@ -1,5 +1,6 @@
 import 'package:dydx_flutter_study_01/components/scaffold.dart';
 import 'package:dydx_flutter_study_01/pages/custom_hook.dart';
+import 'package:dydx_flutter_study_01/pages/init_dispose.dart';
 import 'package:dydx_flutter_study_01/pages/orientation_change.dart';
 import 'package:dydx_flutter_study_01/pages/orientation_control/page.dart';
 import 'package:dydx_flutter_study_01/pages/union_type.dart';
@@ -52,6 +53,10 @@ class MyHomePage extends StatelessWidget {
           NavigationLink(
             label: 'Custom Hook',
             to: CustomHookPage(),
+          ),
+          NavigationLink(
+            label: 'Init Dispose for HookWidget',
+            to: InitializeDisposePage(),
           ),
         ],
       ),
