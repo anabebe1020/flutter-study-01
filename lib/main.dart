@@ -1,4 +1,5 @@
 import 'package:dydx_flutter_study_01/components/scaffold.dart';
+import 'package:dydx_flutter_study_01/pages/custom_hook.dart';
 import 'package:dydx_flutter_study_01/pages/orientation_change.dart';
 import 'package:dydx_flutter_study_01/pages/orientation_control/page.dart';
 import 'package:dydx_flutter_study_01/pages/union_type.dart';
@@ -47,6 +48,10 @@ class MyHomePage extends StatelessWidget {
           NavigationLink(
             label: 'Orientation Change',
             to: OrientationChangePage(),
+          ),
+          NavigationLink(
+            label: 'Custom Hook',
+            to: CustomHookPage(),
           ),
         ],
       ),
