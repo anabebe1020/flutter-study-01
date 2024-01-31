@@ -22,10 +22,11 @@ class _AutocompletePageState extends State<AutocompletePage> {
 
   @override
   Widget build(BuildContext context) {
+    // ページ全体をFocusで覆う
     return Focus(
       focusNode: focusNode,
       child: GestureDetector(
-        onTap: focusNode.requestFocus, // これでフォーカスがAutocompleteから移る
+        onTap: focusNode.unfocus, // これでフォーカスが外れる
         child: MyScaffold(
           title: 'Autocomplete',
           persistentFooterButtons: [
@@ -44,8 +45,8 @@ class _AutocompletePageState extends State<AutocompletePage> {
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               children: [
+                // Autocomplete
                 MyAutocomplete(
-                  // セレクトボックス
                   options: options,
                   onSubmit: (item) {
                     setState(() {

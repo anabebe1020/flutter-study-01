@@ -81,6 +81,7 @@ class MyAutocomplete extends StatelessWidget {
   }
 }
 
+/// サジェストのリストのアイテム
 class _SuggestListItem extends StatelessWidget {
   final String label;
   final void Function() onSelected;
