@@ -29,7 +29,12 @@ class _OrientationChangePageState extends State<OrientationChangePage> {
   Widget build(BuildContext context) {
     /// 現在の画面方向を知る
     final currentOrientation = MediaQuery.of(context).orientation;
-    print(currentOrientation);
+    if (currentOrientation == Orientation.portrait) {
+      print('縦方向');
+    }
+    if (currentOrientation == Orientation.landscape) {
+      print('横方向');
+    }
 
     return MyScaffold(
       title: 'Orientation Change',
